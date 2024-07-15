@@ -1,22 +1,14 @@
 [
-  {
-    "url": "http://ipv4.download.thinkbroadband.com/1GB.zip",
-    "times": 2
-  },
-  {
-    "url": "http://ipv4.download.thinkbroadband.com/512MB.zip",
-    "times": 1
-  },
    {
     "url": "https://ash-speed.hetzner.com/1GB.bin",
-    "times": 1
+    "times": 6
   },
   {
     "url": "http://ipv4.download.thinkbroadband.com/512MB.zip",
-    "times": 7
+    "times": 12
   },
     {
     "url": "https://ash-speed.hetzner.com/10GB.bin",
-    "times": 1
-  },
+    "times": 2
+  }
 ]
