@@ -4,7 +4,19 @@
     "times": 2
   },
   {
-    "url": "http://speedtest-sgp1.digitalocean.com/5gb.test",
+    "url": "http://ipv4.download.thinkbroadband.com/512MB.zip",
     "times": 1
-  }
+  },
+   {
+    "url": "https://ash-speed.hetzner.com/1GB.bin",
+    "times": 1
+  },
+  {
+    "url": "http://ipv4.download.thinkbroadband.com/512MB.zip",
+    "times": 7
+  },
+    {
+    "url": "https://ash-speed.hetzner.com/10GB.bin",
+    "times": 1
+  },
 ]
