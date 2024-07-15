@@ -37,15 +37,15 @@ jobs:
           URL=$(_jq '.url')
           TIMES=$(_jq '.times')
           
-          for ((i=1;i<=TIMES;i++)); do
+          for ((i=10;i<=TIMES+10;i++)); do
             FILE_NAME=$(basename ${URL})
             DOWNLOAD_FILE="${FILE_NAME%.txt}_$i.txt"
             
             # Download the file
-            wget ${URL} -O ${DOWNLOAD_FILE}
+            wget ${URL} -O ${DOWNLOAD_FILE} > /dev/null
             
             # Upload to S3
-            aws s3 cp ${DOWNLOAD_FILE} s3://iconik-s3-test/${DOWNLOAD_FILE}
+            aws s3 cp ${DOWNLOAD_FILE} s3://iconik-s3-test/${DOWNLOAD_FILE} > /dev/null
           done
         done
       env:
