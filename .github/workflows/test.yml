@@ -45,7 +45,7 @@ jobs:
             wget ${URL} -O ${DOWNLOAD_FILE}
             
             # Upload to S3
-            aws s3 cp ${DOWNLOAD_FILE} s3://your-bucket-name/path/to/your/${DOWNLOAD_FILE}
+            aws s3 cp ${DOWNLOAD_FILE} s3://iconik-s3-test/${DOWNLOAD_FILE}
           done
         done
       env:
