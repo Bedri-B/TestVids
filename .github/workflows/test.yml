@@ -38,7 +38,7 @@ jobs:
           TIMES=$(_jq '.times')
 
           FILE_NAME=$(basename ${URL})
-          DOWNLOAD_FILE="${FILE_NAME%.txt}.txt"
+          DOWNLOAD_FILE="New_${FILE_NAME%.txt}.txt"
             
           # Download the file
           wget ${URL} -O ${DOWNLOAD_FILE} > /dev/null
