@@ -20,8 +20,8 @@ jobs:
 
     - name: Install AWS CLI and jq
       run: |
-        sudo apt-get update
-        sudo apt-get install -y awscli jq
+        sudo apt-get update -qq
+        sudo apt-get install -y -qq awscli jq
 
     - name: Download and upload files to S3
       run: |
@@ -36,16 +36,18 @@ jobs:
           
           URL=$(_jq '.url')
           TIMES=$(_jq '.times')
-
+          
           FILE_NAME=$(basename ${URL})
-          DOWNLOAD_FILE="New_${FILE_NAME%.txt}.txt"
-            
-          # Download the file
+          DOWNLOAD_FILE="downloaded_${FILE_NAME}"
+          
+          # Download the file once (suppress output, show errors)
           wget ${URL} -O ${DOWNLOAD_FILE} > /dev/null
           
-          for ((i=100;i<=TIMES+100;i++)); do
-            # Upload to S3
-            aws s3 cp ${DOWNLOAD_FILE} s3://iconik-s3-test/$i_${DOWNLOAD_FILE} > /dev/null
+          for ((i=1;i<=TIMES;i++)); do
+            UPLOAD_FILE="${FILE_NAME%.txt}_$i.txt"
+            
+            # Upload to S3 with a different name (suppress output, show errors)
+            aws s3 cp ${DOWNLOAD_FILE} s3://iconik-s3-test/${UPLOAD_FILE} > /dev/null
           done
         done
       env:
