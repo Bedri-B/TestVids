@@ -44,7 +44,7 @@ jobs:
           wget ${URL} -O ${DOWNLOAD_FILE} > /dev/null
           
           for ((i=1;i<=TIMES;i++)); do
-            UPLOAD_FILE="${FILE_NAME%.txt}_$i.txt"
+            UPLOAD_FILE="Test_${FILE_NAME%.txt}_$i.txt"
             
             # Upload to S3 with a different name (suppress output, show errors)
             aws s3 cp ${DOWNLOAD_FILE} s3://iconik-s3-test/${UPLOAD_FILE}
