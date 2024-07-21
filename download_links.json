@@ -1,6 +1,14 @@
 [
   {
-    "url": "https://ash-speed.hetzner.com/10GB.bin",
+    "url": "http://speedtest.tele2.net/100GB.zip",
     "times": 3
+  },
+  {
+    "url": "http://speedtest.tele2.net/50GB.zip",
+    "times": 5
+  },
+  {
+    "url": "https://ash-speed.hetzner.com/10GB.bin",
+    "times": 10
   }
 ]
